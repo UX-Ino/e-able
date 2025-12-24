@@ -49,7 +49,7 @@ export function RiskValueSection() {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden bg-black border-t border-white/10">
       <div className="container mx-auto px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -58,33 +58,36 @@ export function RiskValueSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl mb-6" style={{ color: "var(--brand-black)", fontWeight: 700 }}>
+          <h2 className="text-4xl md:text-6xl mb-6 font-bold text-white">
             선택의 기로
           </h2>
-          <p className="text-lg md:text-xl opacity-70 max-w-3xl mx-auto" style={{ color: "var(--brand-black)" }}>
+          <p className="text-lg md:text-xl text-white/60 max-w-3xl mx-auto">
             웹 접근성 미준수는 단순한 기술적 문제가 아닙니다.
             <br />
             비즈니스의 지속가능성과 직결된 경영 이슈입니다.
+            <br />
+            <br />
+            지금 바로 리스크를 가치로 전환하세요
           </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
-          {/* Risk Side - Red */}
+          {/* Risk Side - Red Accent */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative"
+            className="relative group"
           >
-            <div className="absolute inset-0 rounded-2xl opacity-10" style={{ backgroundColor: "var(--brand-red)" }} />
-            <div className="relative p-8 md:p-12 rounded-2xl border-2" style={{ borderColor: "var(--brand-red)" }}>
+            <div className="absolute inset-0 rounded-2xl opacity-5 bg-[#E30613] group-hover:opacity-10 transition-opacity" />
+            <div className="relative h-full p-8 md:p-12 rounded-2xl border border-[#E30613]/30 group-hover:border-[#E30613]/50 transition-colors bg-white/5">
               <div className="mb-8">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4" style={{ backgroundColor: "var(--brand-red)", color: "var(--brand-white)" }}>
-                  <TriangleAlert size={20} />
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4 bg-[#E30613] text-white text-sm font-medium">
+                  <TriangleAlert size={18} />
                   <span>미준수 시 리스크</span>
                 </div>
-                <h3 className="text-3xl mb-4" style={{ color: "var(--brand-black)", fontWeight: 700 }}>
+                <h3 className="text-3xl mb-4 font-bold text-white">
                   피할 수 없는 위협
                 </h3>
               </div>
@@ -97,19 +100,18 @@ export function RiskValueSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                    className="flex gap-4 p-4 rounded-lg transition-all duration-300 hover:shadow-lg"
-                    style={{ backgroundColor: "rgba(227, 6, 19, 0.05)" }}
+                    className="flex gap-4 p-5 rounded-xl transition-all duration-300 hover:bg-white/5 border border-transparent hover:border-white/10"
                   >
                     <div className="flex-shrink-0">
-                      <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: "var(--brand-red)" }}>
-                        <risk.icon size={24} style={{ color: "var(--brand-white)" }} />
+                      <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-[#E30613]/20 border border-[#E30613]/40">
+                        <risk.icon size={24} className="text-[#E30613]" />
                       </div>
                     </div>
                     <div>
-                      <h4 className="mb-2" style={{ color: "var(--brand-black)", fontWeight: 600 }}>
+                      <h4 className="mb-1 font-semibold text-white">
                         {risk.title}
                       </h4>
-                      <p className="text-sm opacity-70" style={{ color: "var(--brand-black)" }}>
+                      <p className="text-sm text-white/50 leading-relaxed">
                         {risk.description}
                       </p>
                     </div>
@@ -119,22 +121,22 @@ export function RiskValueSection() {
             </div>
           </motion.div>
 
-          {/* Value Side - White/Black */}
+          {/* Value Side - White/Silver Accent */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative"
+            className="relative group"
           >
-            <div className="absolute inset-0 rounded-2xl" style={{ backgroundColor: "var(--brand-black)", opacity: 0.03 }} />
-            <div className="relative p-8 md:p-12 rounded-2xl border-2" style={{ borderColor: "var(--brand-black)" }}>
+            <div className="absolute inset-0 rounded-2xl bg-white/5 group-hover:bg-white/10 transition-colors" />
+            <div className="relative p-8 md:p-12 rounded-2xl border border-white/10 group-hover:border-white/30 transition-colors bg-white/5">
               <div className="mb-8">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4" style={{ backgroundColor: "var(--brand-black)", color: "var(--brand-white)" }}>
-                  <Award size={20} />
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4 bg-white text-black text-sm font-medium">
+                  <Award size={18} />
                   <span>준수 시 가치</span>
                 </div>
-                <h3 className="text-3xl mb-4" style={{ color: "var(--brand-black)", fontWeight: 700 }}>
+                <h3 className="text-3xl mb-4 font-bold text-white">
                   비즈니스 기회 창출
                 </h3>
               </div>
@@ -147,19 +149,18 @@ export function RiskValueSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                    className="flex gap-4 p-4 rounded-lg transition-all duration-300 hover:shadow-lg"
-                    style={{ backgroundColor: "rgba(0, 0, 0, 0.03)" }}
+                    className="flex gap-4 p-5 rounded-xl transition-all duration-300 hover:bg-white/5 border border-transparent hover:border-white/10"
                   >
                     <div className="flex-shrink-0">
-                      <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: "var(--brand-black)" }}>
-                        <value.icon size={24} style={{ color: "var(--brand-white)" }} />
+                      <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-white/10 border border-white/20">
+                        <value.icon size={24} className="text-white" />
                       </div>
                     </div>
                     <div>
-                      <h4 className="mb-2" style={{ color: "var(--brand-black)", fontWeight: 600 }}>
+                      <h4 className="mb-1 font-semibold text-white">
                         {value.title}
                       </h4>
-                      <p className="text-sm opacity-70" style={{ color: "var(--brand-black)" }}>
+                      <p className="text-sm text-white/50 leading-relaxed">
                         {value.description}
                       </p>
                     </div>
@@ -169,37 +170,6 @@ export function RiskValueSection() {
             </div>
           </motion.div>
         </div>
-
-        {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-center mt-16"
-        >
-          <p className="text-xl mb-6" style={{ color: "var(--brand-black)", opacity: 0.8 }}>
-            지금 바로 리스크를 가치로 전환하세요
-          </p>
-          <button
-            className="px-10 py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-2xl"
-            style={{
-              backgroundColor: "var(--brand-red)",
-              color: "var(--brand-white)"
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "var(--brand-red-hover)";
-              e.currentTarget.style.transform = "translateY(-2px)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "var(--brand-red)";
-              e.currentTarget.style.transform = "translateY(0)";
-            }}
-            aria-label="진단 받기"
-          >
-            진단 받기
-          </button>
-        </motion.div>
       </div>
     </section>
   );

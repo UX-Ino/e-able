@@ -1,3 +1,49 @@
 @import './fonts.css';
 @import './tailwind.css';
 @import './theme.css';
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* High contrast mode */
+body.high-contrast {
+  --background: #000000;
+  --foreground: #ffffff;
+  --border: rgba(255, 255, 255, 0.3);
+}
+
+body.high-contrast * {
+  font-weight: 600 !important;
+}
+
+body.high-contrast button,
+body.high-contrast a {
+  outline: 2px solid #ffffff !important;
+  outline-offset: 2px !important;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E30613;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff0716;
+}
+
+/* Selection color */
+::selection {
+  background: #E30613;
+  color: #ffffff;
+}
