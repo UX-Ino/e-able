@@ -51,6 +51,3 @@ npm run build
 - `src/main.tsx`: 엔트리 포인트
 - `public`: 정적 자원 (이미지, 폰트 등)
 
-## 🎨 디자인 리소스
-
-이 프로젝트의 원본 디자인은 [Figma](https://www.figma.com/design/rnbvie4wRsJbszpoFaUBUU/Landing-Page-Development)에서 확인하실 수 있습니다.
